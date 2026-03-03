@@ -1,0 +1,15 @@
+{% extends "links/base.html" %}
+{% block content %}
+    {% if lista_temas %}
+        <h3 class="text-center">Temas disponíveis:</h1>
+        <ol class="list-group my-3">
+        {% for tema in lista_temas %}
+            <li class="list-group-item list-group-item-action d-flex align-items-center">
+                <a href="#" class="text-decoration-none"><i class="bi bi-folder-symlink-fill text-primary me-2"></i>{{tema.titulo}}</a>
+            </li>
+        {% endfor %}
+        </ol>
+    {% else %}
+        <h3 class="text-center">Nenhum tema disponível.</h1>
+    {% endif %}
+{% endblock %}
