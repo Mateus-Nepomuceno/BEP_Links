@@ -5,7 +5,7 @@
         <ol class="list-group my-3">
         {% for tema in lista_temas %}
             <li class="list-group-item list-group-item-action d-flex align-items-center">
-                <a href="#" class="text-decoration-none"><i class="bi bi-folder-symlink-fill text-primary me-2"></i>{{tema.titulo}}</a>
+                <a href="{% url "links:detalhe" tema.id %}" class="text-decoration-none"><i class="bi bi-folder-symlink-fill text-primary me-2"></i>{{tema.titulo}}</a>
             </li>
         {% endfor %}
         </ol>

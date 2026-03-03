@@ -1,0 +1,31 @@
+{% extends 'links/base.html' %}
+{% block content %}
+    <h3 class="text-center">{{ tema.titulo }}</h3>
+    <div class="container py-4">
+        <div class="row row-cols-2 row-cols-lg-3 g-3">
+        {% for recurso in recursos %}
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <span class="badge bg-dark"><i class="bi bi-folder-fill me-2"></i>{{ recurso.tipo }}</span>
+                        {% if recurso.gratuito %}
+                            <span class="badge bg-success"><i class="bi bi-check-square me-2"></i>Gratuito</span>
+                        {% else %}
+                            <span class="badge bg-danger"><i class="bi bi-cash me-2"></i>Pago</span>
+                        {% endif %}
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{recurso.nome}}</h5>
+                        <h6 class="card-subtitle"></h6>
+                        <p class="card-text">
+                            {{recurso.descricao}}
+                        </p>
+                        <a href="{{ recurso.endereco }}" class="btn btn-primary text-decoration-none card-link" target="_blank">Acesse o material</a>
+                    </div>
+                    <div class="card-footer small">{{recurso.data_pub}}</div>
+                    </div>
+                </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}
